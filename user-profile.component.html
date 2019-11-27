@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../style.css> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Plaster&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
+  
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <!--Sidebar-->
+      <aside class="sidebar">
+        <header>
+          <a href="">
+            <span class="logo"><span class = "logo-vo"> VO</span>IS </span>
+          </a>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a routerLink="/dashboard" class="active menu-item">
+                    <span class="menu-icon far fa-chart-bar"></span>
+                    <span class="menu-label"> Dashboard </span>
+                   </a>
+                 </li>
+              <li><a routerLink="/calendar" class="menu-item">
+                 <span class="menu-icon fas fa-calendar-alt"></span>
+                 <span class="menu-label"> Календарь </span>
+                </a>
+              </li>
+              <div class="submenu">
+                  <div class="multi-level">
+                  <div class="item">
+                  <input type="checkbox" id="A"/>
+                  <label for="A" class="menu-item">
+                    <span class="menu-icon fas fa-clipboard-check"></span>
+                    <span class="menu-label"> Чек-лист </span>
+                  </label>
+                  <ul>
+                      <li><a routerLink="/checklist" class="menu-item">
+                        <span class="menu-icon fas fa-clipboard-check"></span>
+                        <span class="menu-label"> Новый чек-лист </span>
+                       </a>
+                     </li>
+                     <li><a routerLink="/checklist" class="menu-item">
+                        <span class="menu-icon fas fa-clipboard-check"></span>
+                        <span class="menu-label"> Найти чек-листы </span>
+                        </a>
+                      </li>
+                  </ul>
+                  </div>
+                  </div>
+              </div>
+
+              <!--<li><a routerLink="/checklist" class="menu-item">
+                <span class="menu-icon fas fa-clipboard-check"></span>
+                <span class="menu-label"> Чек-лист </span><span class="dangle fas fa-angle-left"></span>
+               </a>
+             </li> -->
+              <li><a routerLink="/task" class="menu-item">
+                  <span class="menu-icon fas fa-tasks"></span>
+                  <span class="menu-label"> ЕКП </span>
+                 </a>
+              </li> 
+            </ul>
+          </nav>
+      </aside>
+      <!--End Sidebar-->
+      <!--Main Wrapper-->
+      <main class="main-wrapper">
+        <!--Site header-->
+        <header class="site-header">
+          <div class="searchbar">
+            <span class="fas fa-search"></span>
+            <input type="text-1" name="" placeholder="Поиск..." id="">
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="#">
+            <div class="notification-bell">
+              <span class="far fa-bell"></span>
+            </div>
+            </a>
+            <div class="user-info">
+                <ng-container *ngIf="userDetails">
+              <span class="user-avatar"> {{userDetails.fullName.split(' ')[0].slice(0,1)}}{{userDetails.fullName.split(' ')[1].slice(0,1)}}  </span>
+              <span class="user-name" (click)="onLogout()" routerLink="/login" > {{userDetails.fullName}} </span>
+              </ng-container>
+            </div>
+          </div>
+        </header>
+        <!-- End Site header-->
+          <div class="content">
+            
+          </div>
+      </main>
+      <!--End Main Wrapper-->
+    </div>
+  </body>
+</html>
